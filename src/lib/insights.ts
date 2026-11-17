@@ -16,5 +16,6 @@ export function buildInsights(stats: YearStats): string[] {
   if (busiest) out.push(`${busiest.label} was your biggest month (${formatMinutes(busiest.minutes)}).`)
   if (stats.uniqueGenres >= 10) out.push(`You explored ${stats.uniqueGenres} genres — a real wanderer.`)
   if (stats.daysActive >= 300) out.push(`You listened on ${stats.daysActive} different days. Nearly every day.`)
+  if (stats.streak) out.push(`Longest streak: ${stats.streak.lengthDays} days in a row — music every single day.`)
   return out
 }
