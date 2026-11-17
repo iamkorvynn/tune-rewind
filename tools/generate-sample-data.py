@@ -7,7 +7,7 @@ one file per month under src/data/months/. No real user data, no Spotify
 branding, all artist/track names are fictional.
 Run: python3 tools/generate-sample-data.py
 """
-import json, random, os
+import json, random, os, sys
 from datetime import datetime, timedelta
 
 random.seed(20261118)
