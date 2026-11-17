@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { monthlyGrowth, biggestJump, quietestMonth } from '../growth'
+import { monthlyGrowth, biggestJump, quietestMonth, averageMonthlyMinutes } from '../growth'
 import type { MonthBucket } from '../types'
 
 const months: MonthBucket[] = [
