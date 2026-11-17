@@ -3,7 +3,7 @@ import type { YearStats } from '../lib/types'
 
 export function Hero({ stats, persona }: { stats: YearStats; persona: string }) {
   return (
-    <section className="hero">
+    <section className="hero" id="top">
       <p className="eyebrow">Your year in music · Nov 2025 — Nov 2026</p>
       <h1>You listened to<br /><span className="accent">{formatMinutes(stats.totalMinutes)}</span> of music.</h1>
       <p className="hero-sub">
