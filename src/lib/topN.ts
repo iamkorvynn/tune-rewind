@@ -33,6 +33,10 @@ export function topTracks(plays: Play[], n = 5): RankedItem[] {
   return rank(map).slice(0, n)
 }
 
+export function rankByPlays(items: RankedItem[]): RankedItem[] {
+  return [...items].sort((a, b) => b.plays - a.plays)
+}
+
 export function topN<T>(items: T[], n: number, key: (x: T) => number): T[] {
   return [...items].sort((a, b) => key(b) - key(a)).slice(0, n)
 }
