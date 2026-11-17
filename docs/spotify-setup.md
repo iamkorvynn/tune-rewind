@@ -20,3 +20,6 @@ your real year:
 
 Never commit a token or secret. If one leaks, revoke it in the Spotify
 dashboard immediately.
+
+User tokens expire after about an hour — fetch fresh top data or re-run
+the Authorization Code flow rather than reusing a stale token.
