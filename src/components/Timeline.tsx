@@ -3,6 +3,7 @@ import type { MonthBucket } from '../lib/types'
 import { BarChart } from './charts/BarChart'
 
 export function Timeline({ months }: { months: MonthBucket[] }) {
+  const totalPlays = months.reduce((s, m) => s + m.plays, 0)
   return (
     <section className="panel">
       <h2>Month by month</h2>
