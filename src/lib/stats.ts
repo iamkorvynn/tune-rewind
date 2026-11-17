@@ -38,6 +38,10 @@ export function peakHour(playsByHourArr: number[]): { hour: number; plays: numbe
   return { hour, plays: playsByHourArr[hour] }
 }
 
+export function averagePlaysPerDay(stats: YearStats): number {
+  return stats.daysActive > 0 ? stats.totalPlays / stats.daysActive : 0
+}
+
 export function listeningPersona(stats: YearStats): string {
   const top = stats.topGenres[0]
   if (!top) return 'Silent Listener'
