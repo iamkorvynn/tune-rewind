@@ -74,6 +74,11 @@ export function shareCardPng(kind: ShareCardKind, stats: YearStats): Promise<str
   })
 }
 
+export function shareCardSubtitle(kind: ShareCardKind, stats: YearStats): string {
+  const lines = shareCardLines(kind, stats).filter(Boolean)
+  return lines[0] ?? ''
+}
+
 export function downloadPng(dataUrl: string, filename: string): void {
   const a = document.createElement('a')
   a.href = dataUrl
