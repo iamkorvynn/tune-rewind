@@ -10,6 +10,12 @@
  */
 import { writeFileSync } from 'node:fs'
 
+if (process.argv.includes('--help')) {
+  console.log('Usage: SPOTIFY_CLIENT_ID=... SPOTIFY_CLIENT_SECRET=... node scripts/fetch-spotify.mjs')
+  console.log('   or: SPOTIFY_ACCESS_TOKEN=... node scripts/fetch-spotify.mjs')
+  process.exit(0)
+}
+
 const clientId = process.env.SPOTIFY_CLIENT_ID
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET
 let token = process.env.SPOTIFY_ACCESS_TOKEN
