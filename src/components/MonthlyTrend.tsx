@@ -12,7 +12,8 @@ export function MonthlyTrend({ months }: { months: MonthBucket[] }) {
       <h2>Monthly trend</h2>
       <p className="panel-sub">
         {jump ? `Biggest jump: ${jump.label} (${Math.round((jump.changePct ?? 0) * 100)}% vs the month before). ` : ''}
-        {quiet ? `Quietest month: ${quiet.label}.` : ''}
+        {quiet ? `Quietest month: ${quiet.label}. ` : ''}
+        Average: {formatMinutes(avg)} a month.
       </p>
       <LineChart months={months} />
     </section>
