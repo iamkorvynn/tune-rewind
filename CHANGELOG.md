@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 — 2026-11-18
+- Added: three listener profiles (Night Owl, Jazz Devotee, Genre Explorer) with a profile picker
+- Added: plays-by-weekday, average monthly minutes, tallest-building and format-hours helpers
+- Polish: print stylesheet, reduced-motion support, SVG titles, aria-labels, header nav, document title per profile
+
 ## 1.1.0 — 2026-11-18
 - Added: top albums, longest streak, biggest day, monthly trend line chart,
   genre donut, stats JSON/CSV export, copy-summary text
