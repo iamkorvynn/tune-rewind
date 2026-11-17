@@ -12,7 +12,7 @@ export function MinutesPerArtist({ artists }: { artists: RankedItem[] }) {
           <div className="genre-row" key={a.name}>
             <span className="genre-name">{a.name}</span>
             <span className="bar"><span style={{ width: `${(a.minutes / max) * 100}%` }} /></span>
-            <span className="genre-share">{formatMinutes(a.minutes)}</span>
+            <span className="genre-share">{formatMinutes(a.minutes)} · {a.plays} plays</span>
           </div>
         ))}
       </div>
