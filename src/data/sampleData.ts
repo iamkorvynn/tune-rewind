@@ -9,6 +9,8 @@ if (!checked.ok) {
 
 export const samplePlays: Play[] = checked.plays
 
+export const sampleYearLabel = 'Nov 2025 — Nov 2026'
+
 export const sampleSource: DataSource = {
   kind: 'sample',
   label: 'Bundled sample data — Nov 2025 to Nov 2026 (fictional artists)',
