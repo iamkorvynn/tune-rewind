@@ -18,6 +18,10 @@ Spotify; no Spotify branding, assets, or code are used.
 - **Share cards** — 1080×1080 PNGs generated on a canvas in the browser
   (summary, top artist, top genre, Sound City), downloaded locally — nothing uploaded
 - **Insights** — plain-language takeaways (peak hour, biggest month, genre home base)
+- **Top albums, longest streak, biggest day** — the album chart, your longest daily run and loudest day
+- **Monthly trend + genre donut** — line chart of the year and a donut of the genre mix
+- **Export** — stats as JSON, top artists as CSV, or a copy-ready summary
+- **Listener profiles** — switch between the default year and three alternate fictional listeners (Night Owl, Jazz Devotee, Genre Explorer)
 
 ## Data
 
