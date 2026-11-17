@@ -11,5 +11,6 @@ describe('App', () => {
     expect(html).toContain('Share cards')
     expect(html).toContain('Listening clock')
     expect(html).toContain('sample data')
+    expect(html).toContain('Try another listener')
   })
 })
