@@ -10,7 +10,7 @@ export function TopGenres({ genres }: { genres: GenreShare[] }) {
           <div className="genre-row" key={g.genre}>
             <span className="genre-name">{g.genre}</span>
             <span className="bar"><span style={{ width: `${g.share * 100}%` }} /></span>
-            <span className="genre-share">{pct(g.share)} · {formatMinutes(g.minutes)}</span>
+            <span className="genre-share">{pct(g.share)} · {formatMinutes(g.minutes)} · {formatNumber(g.plays)} plays</span>
           </div>
         ))}
       </div>
