@@ -19,6 +19,12 @@ import { SoundCity } from './components/SoundCity'
 import { ShareCards } from './components/ShareCards'
 import { Insights } from './components/Insights'
 import { Footer } from './components/Footer'
+import { TopAlbums } from './components/TopAlbums'
+import { StreakPanel } from './components/StreakPanel'
+import { MonthlyTrend } from './components/MonthlyTrend'
+import { TopDay } from './components/TopDay'
+import { ExportPanel } from './components/ExportPanel'
+import { GenreDonut } from './components/GenreDonut'
 
 export default function App() {
   const [source] = useState<DataSource>(sampleSource)
@@ -59,11 +65,21 @@ export default function App() {
           <TopTracks tracks={stats.topTracks} />
         </div>
         <TopGenres genres={stats.topGenres} />
+        <div className="two-col">
+          <GenreDonut genres={stats.topGenres} />
+          <TopAlbums albums={stats.topAlbums} />
+        </div>
+        <div className="two-col">
+          <TopDay stats={stats} />
+          <StreakPanel streak={stats.streak} />
+        </div>
+        <MonthlyTrend months={stats.playsByMonth} />
         <ListeningClock playsByHour={stats.playsByHour} />
         <Timeline months={stats.playsByMonth} />
         <MinutesPerArtist artists={stats.minutesPerArtist} />
         <Insights insights={insights} />
         <ShareCards stats={stats} onDownload={download} busy={busy} error={error} />
+        <ExportPanel stats={stats} />
       </main>
       <Footer />
     </div>
