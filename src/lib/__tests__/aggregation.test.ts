@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { totalMinutes, genreShare, playsByHour, playsByMonth, topListeningDay, minutesPerArtist } from '../aggregation'
+import { totalMinutes, genreShare, playsByHour, playsByMonth, topListeningDay, minutesPerArtist, playsByWeekday } from '../aggregation'
 import type { Play } from '../types'
 
 const p = (genre: string, at: string, ms = 60000): Play => ({
