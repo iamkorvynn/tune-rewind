@@ -9,7 +9,7 @@ export function isValidPlay(p: unknown): p is Play {
     typeof o.track === 'string' && o.track.length > 0 &&
     typeof o.genre === 'string' && o.genre.length > 0 &&
     typeof o.playedAt === 'string' && !Number.isNaN(Date.parse(o.playedAt)) &&
-    typeof o.msPlayed === 'number' && o.msPlayed > 0
+    typeof o.msPlayed === 'number' && o.msPlayed > 0 && o.msPlayed <= 24 * 3600 * 1000
   )
 }
 
