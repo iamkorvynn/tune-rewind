@@ -8,7 +8,7 @@ export function TopArtists({ artists }: { artists: RankedItem[] }) {
       <h2>Top artists</h2>
       <ol className="ranked-list">
         {artists.map((a, i) => (
-          <li key={a.name}>
+          <li key={a.name} title={`${a.name} — ${a.extra ?? ''}`}>
             <span className="rank">{i + 1}</span>
             <span className="rank-name">{a.name}</span>
             <span className="rank-genre">{a.extra ?? ''}</span>
