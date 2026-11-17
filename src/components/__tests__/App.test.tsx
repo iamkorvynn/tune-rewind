@@ -10,6 +10,8 @@ describe('App', () => {
     expect(html).toContain('Sound City')
     expect(html).toContain('Share cards')
     expect(html).toContain('Listening clock')
+    expect(html).toContain('Monthly trend')
+    expect(html).toContain('Genre mix')
     expect(html).toContain('sample data')
     expect(html).toContain('Try another listener')
   })
