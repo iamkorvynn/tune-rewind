@@ -40,6 +40,12 @@ export function playsByMonth(plays: Play[]): MonthBucket[] {
     .map(([month, v]) => ({ month, label: monthLabel(month), plays: v.plays, minutes: v.minutes }))
 }
 
+export function playsByWeekday(plays: Play[]): number[] {
+  const buckets = new Array<number>(7).fill(0)
+  for (const p of plays) buckets[new Date(p.playedAt).getDay()] += 1
+  return buckets
+}
+
 export function topListeningDay(plays: Play[]): { date: string; plays: number; minutes: number } | null {
   if (plays.length === 0) return null
   const map = new Map<string, { plays: number; minutes: number }>()
