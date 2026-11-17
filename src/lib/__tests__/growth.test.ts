@@ -30,3 +30,10 @@ describe('quietestMonth', () => {
     expect(quietestMonth([])).toBeNull()
   })
 })
+
+describe('averageMonthlyMinutes', () => {
+  it('averages minutes across months', () => {
+    expect(averageMonthlyMinutes(months)).toBeCloseTo((100 + 150 + 90) / 3)
+    expect(averageMonthlyMinutes([])).toBe(0)
+  })
+})
