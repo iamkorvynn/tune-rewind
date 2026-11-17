@@ -17,7 +17,7 @@ export function ShareCards({ stats, onDownload, busy, error }: {
   return (
     <section className="panel">
       <h2>Share cards</h2>
-      <p className="panel-sub">Canvas-generated 1080×1080 PNGs, ready to post. Downloads as a file — nothing is uploaded anywhere.</p>
+      <p className="panel-sub">Canvas-generated PNGs, ready to post. Each card is 1080×1080. Downloads as a file — nothing is uploaded anywhere.</p>
       {error ? <p className="error">{error}</p> : null}
       <div className="share-grid">
         {KINDS.map(({ kind, blurb }) => (
