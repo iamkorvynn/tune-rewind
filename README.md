@@ -32,6 +32,12 @@ There is **no Spotify API key** bundled with this repo, so the app runs fully on
 per-month files in `src/data/months/`). The UI says so — a banner states it is
 running on sample data.
 
+### Listener profiles
+
+Besides the default year, three alternate fictional listeners ship in
+`src/data/profiles/` (see `docs/profiles.md`). Use the picker at the top of
+the app — every stat, chart, the skyline and the share cards recompute.
+
 ## Run it
 
 ```bash
