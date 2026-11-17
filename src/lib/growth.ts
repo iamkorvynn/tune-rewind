@@ -20,6 +20,11 @@ export function biggestJump(months: MonthBucket[]): MonthGrowth | null {
   return g.reduce((a, b) => (b.changePct! > a.changePct! ? b : a))
 }
 
+export function averageMonthlyMinutes(months: MonthBucket[]): number {
+  if (months.length === 0) return 0
+  return months.reduce((s, m) => s + m.minutes, 0) / months.length
+}
+
 export function quietestMonth(months: MonthBucket[]): MonthBucket | null {
   if (months.length === 0) return null
   return [...months].sort((a, b) => a.minutes - b.minutes)[0]
