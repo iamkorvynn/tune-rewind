@@ -10,7 +10,7 @@ Run: python3 tools/generate-sample-data.py
 import json, random, os, sys
 from datetime import datetime, timedelta
 
-random.seed(20261118)
+random.seed(int(sys.argv[1]) if len(sys.argv) > 1 else 20261118)
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ARTISTS = [
