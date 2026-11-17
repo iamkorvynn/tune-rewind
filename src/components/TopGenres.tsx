@@ -1,4 +1,4 @@
-import { pct, formatMinutes } from '../lib/format'
+import { pct, formatMinutes, formatNumber } from '../lib/format'
 import type { GenreShare } from '../lib/types'
 
 export function TopGenres({ genres }: { genres: GenreShare[] }) {
