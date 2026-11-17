@@ -16,3 +16,10 @@ describe('hourLabel', () => {
   })
 })
 describe('pct', () => { it('formats a share', () => { expect(pct(0.255)).toBe('25.5%') }) })
+
+describe('formatHours', () => {
+  it('formats hours with one decimal', () => {
+    expect(formatHours(10.877)).toBe('10.9 hrs')
+    expect(formatHours(1)).toBe('1 hr')
+  })
+})
