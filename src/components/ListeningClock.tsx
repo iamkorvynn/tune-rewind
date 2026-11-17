@@ -4,6 +4,7 @@ import { BarChart } from './charts/BarChart'
 export function ListeningClock({ playsByHour }: { playsByHour: number[] }) {
   const labels = playsByHour.map((_, h) => hourLabel(h))
   const peak = playsByHour.indexOf(Math.max(...playsByHour))
+  const quiet = playsByHour.indexOf(Math.min(...playsByHour))
   return (
     <section className="panel">
       <h2>Listening clock</h2>
