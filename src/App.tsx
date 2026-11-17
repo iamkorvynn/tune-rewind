@@ -36,6 +36,10 @@ export default function App() {
   const { download, busy, error } = useShareCard(stats)
 
   useEffect(() => {
+    document.title = profileId ? `TuneRewind — ${profileId}` : 'TuneRewind — Your Year in Music'
+  }, [profileId])
+
+  useEffect(() => {
     if (!spotifyConfigured()) return
     const token = import.meta.env.VITE_SPOTIFY_ACCESS_TOKEN as string
     fetchSpotifyTop(token)
