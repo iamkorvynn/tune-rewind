@@ -8,7 +8,7 @@ export function ListeningClock({ playsByHour }: { playsByHour: number[] }) {
   return (
     <section className="panel">
       <h2>Listening clock</h2>
-      <p className="panel-sub">Plays by hour of day. Peak: <strong>{hourLabel(peak)}</strong> — the night-owl slot.</p>
+      <p className="panel-sub">Plays by hour of day. Peak: <strong>{hourLabel(peak)}</strong>; quietest: {hourLabel(quiet)}.</p>
       <BarChart values={playsByHour} labels={labels} title="Plays by hour of day" />
     </section>
   )
