@@ -1,6 +1,8 @@
 import type { Play, YearStats } from './types'
 import { topArtists, topTracks } from './topN'
 import { totalMinutes, genreShare, playsByHour, playsByMonth, topListeningDay, minutesPerArtist } from './aggregation'
+import { topAlbums } from './topAlbums'
+import { longestStreak } from './streak'
 
 export function computeYearStats(plays: Play[]): YearStats {
   const total = totalMinutes(plays)
@@ -24,6 +26,8 @@ export function computeYearStats(plays: Play[]): YearStats {
     playsByHour: playsByHour(plays),
     playsByMonth: playsByMonth(plays),
     minutesPerArtist: minutesPerArtist(plays).slice(0, 10),
+    topAlbums: topAlbums(plays, 5),
+    streak: longestStreak(plays),
     daysActive: days.size,
   }
 }
