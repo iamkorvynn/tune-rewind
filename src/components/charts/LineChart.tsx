@@ -12,6 +12,7 @@ export function LineChart({ months }: { months: MonthBucket[] }) {
   const path = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ')
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="linechart" role="img" aria-label="Monthly listening trend line chart">
+      <line x1={PAD} y1={H - PAD} x2={W - PAD} y2={H - PAD} stroke="#2a2a3d" />
       <path d={path} fill="none" stroke="#22d3ee" strokeWidth="3" strokeLinejoin="round" />
       {pts.map((p) => (
         <g key={p.label}>
