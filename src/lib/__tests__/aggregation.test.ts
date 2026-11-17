@@ -58,3 +58,16 @@ describe('minutesPerArtist', () => {
     expect(m[0].name).toBe('Amy')
   })
 })
+
+describe('playsByWeekday', () => {
+  it('buckets by day of week, Sunday first', () => {
+    const w = playsByWeekday([
+      { trackId: 't1', artist: 'A', track: 'S', album: 'A', genre: 'Rock', playedAt: '2026-06-07T10:00:00', msPlayed: 60000 },
+      { trackId: 't1', artist: 'A', track: 'S', album: 'A', genre: 'Rock', playedAt: '2026-06-08T10:00:00', msPlayed: 60000 },
+    ])
+    expect(w).toHaveLength(7)
+    expect(w[0]).toBe(1) // 2026-06-07 is a Sunday
+    expect(w[1]).toBe(1) // 2026-06-08 is a Monday
+    expect(w[2]).toBe(0)
+  })
+})
