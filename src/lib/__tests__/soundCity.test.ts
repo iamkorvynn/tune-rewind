@@ -40,3 +40,11 @@ describe('skylineSummary', () => {
     expect(skylineSummary([])).toContain('No skyline')
   })
 })
+
+describe('tallestBuilding', () => {
+  it('returns the tallest building', () => {
+    const city = buildSoundCity(genres, null)
+    expect(tallestBuilding(city)?.genre).toBe('Rock')
+    expect(tallestBuilding([])).toBeNull()
+  })
+})
