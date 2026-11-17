@@ -11,7 +11,7 @@ export function TopTracks({ tracks }: { tracks: RankedItem[] }) {
             <span className="rank">{i + 1}</span>
             <span className="rank-name">{t.name}</span>
             <span className="rank-genre">{t.extra ?? ''}</span>
-            <span className="rank-min">{formatNumber(t.plays)} plays</span>
+            <span className="rank-min" title={t.name}>{formatNumber(t.plays)} plays</span>
           </li>
         ))}
       </ol>
