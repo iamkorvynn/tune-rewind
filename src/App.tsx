@@ -26,7 +26,7 @@ import { TopDay } from './components/TopDay'
 import { ExportPanel } from './components/ExportPanel'
 import { GenreDonut } from './components/GenreDonut'
 import { ProfilePicker } from './components/ProfilePicker'
-import { profileSource, type ListenerProfile } from './data/profiles'
+import { loadProfile, profileSource, type ProfileMeta } from './data/profiles'
 
 export default function App() {
   const [source, setSource] = useState<DataSource>(sampleSource)
@@ -57,9 +57,15 @@ export default function App() {
       <main>
         <ProfilePicker
           selectedId={profileId}
-          onSelect={(p: ListenerProfile | null) => {
-            setProfileId(p ? p.id : null)
-            setSource(p ? profileSource(p) : sampleSource)
+          onSelect={async (meta: ProfileMeta | null) => {
+            if (!meta) {
+              setProfileId(null)
+              setSource(sampleSource)
+              return
+            }
+            setProfileId(meta.id)
+            const profile = await loadProfile(meta)
+            setSource(profileSource(profile))
           }}
         />
         <DataBanner kind={source.kind} />
