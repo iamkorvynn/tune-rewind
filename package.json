@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "fetch-spotify": "node scripts/fetch-spotify.mjs"
+    "fetch-spotify": "node scripts/fetch-spotify.mjs",
+    "check-data": "node scripts/check-data.mjs",
+    "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
