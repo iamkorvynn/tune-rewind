@@ -53,6 +53,8 @@ export interface YearStats {
   playsByMonth: MonthBucket[]
   minutesPerArtist: RankedItem[]
   daysActive: number
+  topAlbums: RankedItem[]
+  streak: import('./streak').Streak | null
 }
 
 export interface DataSource {
