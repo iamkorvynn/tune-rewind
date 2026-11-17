@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { buildSoundCity, genreColor, skylineSummary } from '../soundCity'
+import { buildSoundCity, genreColor, skylineSummary, tallestBuilding } from '../soundCity'
 import type { GenreShare } from '../types'
 
 const genres: GenreShare[] = [
