@@ -29,3 +29,8 @@ export function hourLabel(h: number): string {
 export function pct(x: number): string {
   return `${(x * 100).toFixed(1)}%`
 }
+
+export function formatHours(hours: number): string {
+  const rounded = Math.round(hours * 10) / 10
+  return `${rounded} hr${rounded === 1 ? '' : 's'}`
+}
