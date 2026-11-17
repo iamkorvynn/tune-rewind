@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formatMinutes, formatNumber, formatDateShort, monthLabel, hourLabel, pct } from '../format'
+import { formatMinutes, formatNumber, formatDateShort, monthLabel, hourLabel, pct, formatHours } from '../format'
 
 describe('formatMinutes', () => {
   it('formats under an hour', () => { expect(formatMinutes(45)).toBe('45 min') })
