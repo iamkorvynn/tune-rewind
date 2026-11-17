@@ -1,4 +1,5 @@
 import type { MonthBucket } from '../lib/types'
+import { formatMinutes } from '../lib/format'
 import { biggestJump, quietestMonth } from '../lib/growth'
 import { LineChart } from './charts/LineChart'
 
