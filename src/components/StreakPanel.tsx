@@ -6,7 +6,7 @@ export function StreakPanel({ streak }: { streak: Streak | null }) {
     <section className="panel">
       <h2>Longest streak</h2>
       {streak ? (
-        <p className="big-stat">{streak.lengthDays} days in a row</p>
+        <p className="big-stat" title={`Streak from ${streak.start} to ${streak.end}`}>{streak.lengthDays} days in a row</p>
       ) : (
         <p className="panel-sub">No listening days yet.</p>
       )}
