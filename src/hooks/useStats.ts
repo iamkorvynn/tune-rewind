@@ -6,6 +6,6 @@ import { buildInsights } from '../lib/insights'
 export function useStats(plays: Play[]) {
   return useMemo(() => {
     const stats: YearStats = computeYearStats(plays)
-    return { stats, persona: listeningPersona(stats), insights: buildInsights(stats) }
+    return { stats, persona: listeningPersona(stats), insights: buildInsights(stats), peak: peakHour(stats.playsByHour) }
   }, [plays])
 }
