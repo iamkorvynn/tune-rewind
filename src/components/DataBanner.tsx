@@ -4,7 +4,7 @@ export function DataBanner({ kind }: { kind: 'sample' | 'spotify' }) {
   }
   return (
     <div className="banner banner-sample">
-      Running on bundled sample data. Add a Spotify token (see README) to see your real year in music.
+      Running on bundled sample data. Add a Spotify token (see README and docs/spotify-setup.md) to see your real year in music.
     </div>
   )
 }
