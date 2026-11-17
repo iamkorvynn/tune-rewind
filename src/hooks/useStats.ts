@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import type { Play, YearStats } from '../lib/types'
-import { computeYearStats, listeningPersona } from '../lib/stats'
+import { computeYearStats, listeningPersona, peakHour } from '../lib/stats'
 import { buildInsights } from '../lib/insights'
 
 export function useStats(plays: Play[]) {
