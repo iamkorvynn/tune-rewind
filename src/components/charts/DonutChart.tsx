@@ -12,6 +12,7 @@ export function DonutChart({ genres }: { genres: GenreShare[] }) {
   return (
     <div className="donut-wrap">
       <svg viewBox="0 0 200 200" className="donut" role="img" aria-label="Genre share donut chart">
+        <title>Genre share donut chart</title>
         <circle cx="100" cy="100" r={R} fill="none" stroke="#26263a" strokeWidth="28" />
         {top.map((g) => {
           const frac = g.share / total
