@@ -13,6 +13,7 @@ export function SoundCity({ genres, topArtist }: { genres: GenreShare[]; topArti
         {topArtist ? ` ${topArtist.name} Tower rises above them all.` : ''}
       </p>
       <svg viewBox="0 0 640 340" className="skyline" role="img" aria-label={skylineSummary(buildings)}>
+        <title>Sound City skyline — genre buildings by minutes listened</title>
         <rect x="0" y="0" width="640" height="340" fill="#0b0b14" rx="12" />
         {buildings.map((b, i) => {
           const x = 20 + i * 62
