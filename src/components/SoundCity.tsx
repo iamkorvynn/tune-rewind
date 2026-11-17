@@ -6,7 +6,7 @@ export function SoundCity({ genres, topArtist }: { genres: GenreShare[]; topArti
   const buildings = buildSoundCity(genres, topArtist)
   const groundY = 300
   return (
-    <section className="panel sound-city">
+    <section className="panel sound-city" id="sound-city">
       <h2>Sound City — the twist</h2>
       <p className="panel-sub">
         Every top genre is a building. Its height is minutes listened, and your #1 artist is the tallest tower.
