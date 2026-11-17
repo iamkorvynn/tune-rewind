@@ -6,6 +6,7 @@ import { LineChart } from './charts/LineChart'
 export function MonthlyTrend({ months }: { months: MonthBucket[] }) {
   const jump = biggestJump(months)
   const quiet = quietestMonth(months)
+  const avg = months.length ? months.reduce((s, m) => s + m.minutes, 0) / months.length : 0
   return (
     <section className="panel">
       <h2>Monthly trend</h2>
