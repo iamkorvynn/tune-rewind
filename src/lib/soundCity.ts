@@ -36,6 +36,11 @@ export function buildSoundCity(genres: GenreShare[], topArtist: RankedItem | nul
   }))
 }
 
+export function tallestBuilding(buildings: CityBuilding[]): CityBuilding | null {
+  if (buildings.length === 0) return null
+  return buildings.reduce((a, b) => (b.height > a.height ? b : a))
+}
+
 export function skylineSummary(buildings: CityBuilding[]): string {
   if (buildings.length === 0) return 'No skyline yet — listen to something first.'
   const tallest = buildings.reduce((a, b) => (b.height > a.height ? b : a))
