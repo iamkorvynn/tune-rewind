@@ -34,10 +34,10 @@ async function spotifyGet<T>(token: string, path: string): Promise<T> {
 interface TopArtistsResponse { items: { name: string; genres: string[]; images: { url: string }[] }[] }
 interface TopTracksResponse { items: { name: string; artists: { name: string }[]; duration_ms: number }[] }
 
-export async function fetchSpotifyTop(token: string): Promise<{ artists: SpotifyTopItem[]; tracks: SpotifyTopItem[] }> {
+export async function fetchSpotifyTop(token: string, timeRange: 'short_term' | 'medium_term' | 'long_term' = 'long_term'): Promise<{ artists: SpotifyTopItem[]; tracks: SpotifyTopItem[] }> {
   const [artists, tracks] = await Promise.all([
-    spotifyGet<TopArtistsResponse>(token, '/me/top/artists?time_range=long_term&limit=10'),
-    spotifyGet<TopTracksResponse>(token, '/me/top/tracks?time_range=long_term&limit=10'),
+    spotifyGet<TopArtistsResponse>(token, `/me/top/artists?time_range=${timeRange}&limit=10`),
+    spotifyGet<TopTracksResponse>(token, `/me/top/tracks?time_range=${timeRange}&limit=10`),
   ])
   return {
     artists: artists.items.map((a) => ({ name: a.name, genre: a.genres[0], imageUrl: a.images[0]?.url })),
