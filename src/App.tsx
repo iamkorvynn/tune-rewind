@@ -25,9 +25,12 @@ import { MonthlyTrend } from './components/MonthlyTrend'
 import { TopDay } from './components/TopDay'
 import { ExportPanel } from './components/ExportPanel'
 import { GenreDonut } from './components/GenreDonut'
+import { ProfilePicker } from './components/ProfilePicker'
+import { profileSource, type ListenerProfile } from './data/profiles'
 
 export default function App() {
-  const [source] = useState<DataSource>(sampleSource)
+  const [source, setSource] = useState<DataSource>(sampleSource)
+  const [profileId, setProfileId] = useState<string | null>(null)
   const [spotifyNote, setSpotifyNote] = useState<string | null>(null)
   const { stats, persona, insights } = useStats(source.plays)
   const { download, busy, error } = useShareCard(stats)
@@ -48,6 +51,13 @@ export default function App() {
     <div className="app">
       <Header sourceLabel={source.label} />
       <main>
+        <ProfilePicker
+          selectedId={profileId}
+          onSelect={(p: ListenerProfile | null) => {
+            setProfileId(p ? p.id : null)
+            setSource(p ? profileSource(p) : sampleSource)
+          }}
+        />
         <DataBanner kind={source.kind} />
         {spotifyNote ? <div className="banner banner-live">{spotifyNote}</div> : null}
         <Hero stats={stats} persona={persona} />
